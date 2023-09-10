@@ -5,7 +5,7 @@ from torch.utils.data import DataLoader, Dataset
 from torchvision import transforms
 from PIL import Image
 
-# Define your image enhancement model architecture
+# model architecture
 class ImageEnhancementModel(nn.Module):
     def __init__(self):
         super(ImageEnhancementModel, self).__init__()
@@ -18,13 +18,12 @@ class ImageEnhancementModel(nn.Module):
         self.conv3 = nn.Conv2d(in_channels=64, out_channels=3, kernel_size=3, padding=1)
 
     def forward(self, x):
-        # Implement the forward pass
+        # forward pass
         x = self.relu1(self.conv1(x))
         x = self.relu2(self.conv2(x))
         x = self.conv3(x)
         return x
-
-# Define a custom dataset class that loads both "before" and "after enhancement" images
+        
 class CustomDataset(Dataset):
     def __init__(self, data_dir):
         self.data_dir = data_dir
@@ -38,7 +37,7 @@ class CustomDataset(Dataset):
         img_name = os.path.join(self.data_dir, self.image_files[idx])
         image = Image.open(img_name)
         
-        # Ensure the image has 3 channels (RGB)
+        
         if image.mode != 'RGB':
             image = image.convert('RGB')
         
@@ -94,7 +93,7 @@ input_image = train_dataset.transform(input_image).unsqueeze(0)
 # Use the trained model to enhance the input image
 enhanced_image = model(input_image)
 
-# Save the enhanced image
+# Save 
 output_image = enhanced_image.squeeze().permute(1, 2, 0).detach().cpu().numpy()
 output_image = (output_image + 1) / 2.0 * 255.0  # Denormalize
 output_image = output_image.astype('uint8')
