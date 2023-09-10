@@ -50,14 +50,13 @@ batch_size = 8
 learning_rate = 0.001
 num_epochs = 50
 
-# Initialize your model
 model = ImageEnhancementModel()
 
-# Define loss function and optimizer
+# loss function and optimizer
 criterion = nn.MSELoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
-# Create DataLoader for training data
+# DataLoader
 train_dataset = CustomDataset(data_dir='before')
 train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
 
