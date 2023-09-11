@@ -40,7 +40,7 @@ Here are some example results of using NST to enhance images:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Aziz Karoui License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
