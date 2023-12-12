@@ -44,7 +44,7 @@ This project is licensed under the Aziz Karoui License - see the [LICENSE](LICEN
 
 ## Acknowledgments
 
-- This project is based on the Neural Style Transfer technique developed by Gatys et al.
+- This project is based on the Neural Style Transfer technique developed by Aziz Karoui.
 - Pre-trained VGG models provided by the Keras team.
 
 Feel free to modify this README file to include more details, usage instructions, or additional sections relevant to your project.
